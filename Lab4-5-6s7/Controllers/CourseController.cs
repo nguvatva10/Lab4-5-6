@@ -9,13 +9,17 @@ using System.Web.Mvc;
 
 namespace Lab4_5_6s7.Controllers
 {
-    public class CoursesController : Controller
+    public class CourseController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
-        // GET: Courses
-        public CoursesController()
+        public CourseController()
         {
             _dbContext = new ApplicationDbContext();
+        }
+        // GET: Course
+        public ActionResult Index()
+        {
+            return View();
         }
         [Authorize]
         public ActionResult Create()
@@ -28,8 +32,14 @@ namespace Lab4_5_6s7.Controllers
         }
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Categories = _dbContext.Categories.ToList();
+                return View("Create", viewModel);
+            }
             var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),
@@ -39,7 +49,7 @@ namespace Lab4_5_6s7.Controllers
             };
             _dbContext.Courses.Add(course);
             _dbContext.SaveChanges();
-            return View(viewModel);
+            return RedirectToAction("Index", "Home");
         }
     }
 }
