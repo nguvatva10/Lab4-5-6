@@ -24,8 +24,8 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #337ab7;
-    border-color: #fbf6f6;
+    background-color: #d41d50;
+    border-color: #f6f6f6;
 }
 
     .navbar-inverse .navbar-nav > li > a {
@@ -42,7 +42,7 @@ textarea {
 
     .course > li {
         position: relative;
-        margin: 30px 0;
+        margin: 30px;
     }
 
         .course > li .date {
@@ -58,3 +58,19 @@ textarea {
             top: 0;
             left: 70px;
         }
+.course > li .lecture{
+
+}
+
+.course >li .category{
+
+}
+
+.course >li .action{
+    display: none;
+    left:70px;
+    position:absolute;
+}
+.course > li:hover .action{
+    display:block;
+}

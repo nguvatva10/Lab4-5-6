@@ -51,5 +51,6 @@ namespace Lab4_5_6s7.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+       
     }
 }
