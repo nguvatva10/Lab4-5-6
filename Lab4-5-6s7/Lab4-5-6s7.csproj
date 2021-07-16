@@ -45,7 +45,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Eco.Handles, Version=7.0.0.13326, Culture=neutral, PublicKeyToken=46a833be9e90de8c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EcoCore.7.0.0.13326\lib\net40\Eco.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Interfaces, Version=7.0.0.13326, Culture=neutral, PublicKeyToken=46a833be9e90de8c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EcoCore.7.0.0.13326\lib\net40\Eco.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.LinqExtender, Version=7.0.0.13326, Culture=neutral, PublicKeyToken=46a833be9e90de8c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EcoCore.7.0.0.13326\lib\net40\Eco.LinqExtender.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -223,6 +233,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CoursesViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
     <Compile Include="ViewModels\ValidTime.cs" />
@@ -284,6 +295,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Attending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

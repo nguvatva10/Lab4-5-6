@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using Lab4_5_6s7.ViewModels;
 
 namespace Lab4_5_6s7.Controllers
 {
@@ -21,9 +22,13 @@ namespace Lab4_5_6s7.Controllers
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
-                
+            var viewModel = new CoursesViewModel
+            {
+                UpcommingCourses = upcomingCourses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
 
-            return View(upcomingCourses);
+            return View(viewModel);
         }
 
         public ActionResult About()

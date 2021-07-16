@@ -12,7 +12,7 @@ namespace Lab4_5_6s7.ViewModels
         [Required]
         public string Place { get; set; }
 
-
+        
         [Required]
         [FutureDate]
         public string Date { get; set; }
