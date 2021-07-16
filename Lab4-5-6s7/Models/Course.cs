@@ -9,7 +9,7 @@ namespace Lab4_5_6s7.Models
     public class Course
     {
         public int Id { get; set; }
-        
+        public bool IsCanceled { get; set; }
         public ApplicationUser Lecturer { get; set; }
         public string LecturerId { get; set; }
         [Required]
